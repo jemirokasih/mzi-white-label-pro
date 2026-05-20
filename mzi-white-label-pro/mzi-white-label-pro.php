@@ -4,9 +4,13 @@
  * Plugin URI: https://mzi.co.id
  * Description: Professional White Label Branding Plugin for WordPress.
  * Version: 3.0.1
+ * Requires at least: 5.8
+ * Requires PHP: 7.4
  * Author: PT Mikrotek Zemiro Indonesia
  * Author URI: https://mzi.co.id
  * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: mzi-white-label-pro
  */
 
 if (!defined('ABSPATH')) {
