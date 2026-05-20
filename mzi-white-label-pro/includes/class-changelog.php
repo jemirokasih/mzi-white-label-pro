@@ -8,6 +8,14 @@ class MZI_White_Label_Pro_Changelog {
 
     public static function entries() {
         return [
+            '3.0.2' => [
+                'Fixed' => [
+                    'Fixed WordPress.org Plugin Check findings.',
+                    'Removed duplicate Plugin URI from the plugin header.',
+                    'Updated WordPress.org contributor username and tested-up-to metadata.',
+                    'Improved escaping and request handling compliance.',
+                ],
+            ],
             '3.0.1' => [
                 'Added' => [
                     'Persistent changelog registry so previous release notes stay visible.',

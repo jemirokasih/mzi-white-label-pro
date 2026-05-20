@@ -185,7 +185,8 @@ class MZI_White_Label_Pro_Admin {
 
     public function settings_page() {
         $settings = MZI_White_Label_Pro_Settings::all();
-        $active_tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'branding';
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only tab routing in the admin page URL.
+        $active_tab = isset($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : 'branding';
 
         if (!isset($this->tabs[$active_tab])) {
             $active_tab = 'branding';
@@ -292,7 +293,7 @@ class MZI_White_Label_Pro_Admin {
                 </tr>
                 <tr>
                     <td><strong>Server Software</strong></td>
-                    <td><?php echo esc_html(isset($_SERVER['SERVER_SOFTWARE']) ? $_SERVER['SERVER_SOFTWARE'] : '-'); ?></td>
+                    <td><?php echo esc_html($this->server_software()); ?></td>
                 </tr>
             </tbody>
         </table>
@@ -322,7 +323,9 @@ class MZI_White_Label_Pro_Admin {
         ?>
         <form method="post" action="options.php">
             <?php settings_fields('mzi_white_label_group'); ?>
-            <input type="hidden" name="mzi_wlp_fields" value="<?php echo esc_attr(implode(',', $fields)); ?>">
+            <input type="hidden"
+                   name="<?php echo esc_attr(MZI_White_Label_Pro_Settings::field_name('__fields')); ?>"
+                   value="<?php echo esc_attr(implode(',', $fields)); ?>">
         <?php
     }
 
@@ -427,5 +430,13 @@ class MZI_White_Label_Pro_Admin {
             </div>
         </div>
         <?php
+    }
+
+    private function server_software() {
+        if (empty($_SERVER['SERVER_SOFTWARE'])) {
+            return '-';
+        }
+
+        return sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE']));
     }
 }

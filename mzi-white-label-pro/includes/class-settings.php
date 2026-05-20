@@ -34,7 +34,7 @@ class MZI_White_Label_Pro_Settings {
 
     public static function sanitize($input) {
         $input = is_array($input) ? $input : [];
-        $allowed_fields = self::posted_fields();
+        $allowed_fields = self::posted_fields($input);
         $output = self::all();
 
         $url_fields = [
@@ -157,12 +157,12 @@ class MZI_White_Label_Pro_Settings {
         return $output;
     }
 
-    private static function posted_fields() {
-        if (empty($_POST['mzi_wlp_fields'])) {
+    private static function posted_fields($input) {
+        if (empty($input['__fields'])) {
             return [];
         }
 
-        $posted_fields = sanitize_text_field(wp_unslash($_POST['mzi_wlp_fields']));
+        $posted_fields = sanitize_text_field($input['__fields']);
         $posted_fields = array_filter(array_map('sanitize_key', explode(',', $posted_fields)));
 
         return array_values($posted_fields);

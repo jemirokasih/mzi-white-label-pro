@@ -19,7 +19,7 @@ find mzi-white-label-pro -name '*.php' -print -exec php -l {} \;
 ## Build Release ZIP
 
 ```bash
-zip -r mzi-white-label-pro-v3.0.1.zip mzi-white-label-pro -x '*.DS_Store' '*.git*'
+zip -r mzi-white-label-pro-v3.0.2.zip mzi-white-label-pro -x '*.DS_Store' '*.git*'
 ```
 
 The release ZIP should contain `mzi-white-label-pro/` as the top-level folder.

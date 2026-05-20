@@ -44,7 +44,7 @@ class MZI_White_Label_Pro_Dashboard {
             $cms_name = MZI_White_Label_Pro_Settings::get('cms_name', 'MZI CMS');
             $content = '<h2>' . esc_html($cms_name) . '</h2><p>Powered by PT Mikrotek Zemiro Indonesia</p>';
 
-            echo $content;
+            echo wp_kses_post($content);
             return;
         }
 

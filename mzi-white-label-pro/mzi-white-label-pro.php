@@ -1,9 +1,8 @@
 <?php
 /**
  * Plugin Name: MZI White Label Pro
- * Plugin URI: https://mzi.co.id
  * Description: Professional White Label Branding Plugin for WordPress.
- * Version: 3.0.1
+ * Version: 3.0.2
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Author: PT Mikrotek Zemiro Indonesia
@@ -17,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('MZI_WLP_VERSION', '3.0.1');
+define('MZI_WLP_VERSION', '3.0.2');
 define('MZI_WLP_FILE', __FILE__);
 define('MZI_WLP_PATH', plugin_dir_path(__FILE__));
 define('MZI_WLP_URL', plugin_dir_url(__FILE__));

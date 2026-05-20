@@ -19,11 +19,13 @@ class MZI_White_Label_Pro_Compatibility {
             return true;
         }
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin page detection.
         if (!is_admin() || empty($_GET['page'])) {
             return false;
         }
 
-        return self::is_wordfence_page($_GET['page']);
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin page detection.
+        return self::is_wordfence_page(wp_unslash($_GET['page']));
     }
 
     public static function is_protected_menu_slug($slug) {

@@ -2,6 +2,16 @@
 
 All notable changes to MZI White Label Pro are documented here.
 
+## [3.0.2] - 2026-05-20
+
+### Fixed
+
+- Fixed WordPress.org Plugin Check findings.
+- Removed duplicate Plugin URI from the plugin header.
+- Updated WordPress.org contributor username.
+- Updated `Tested up to` value for repository submission.
+- Improved escaping and request handling compliance.
+
 ## [3.0.1] - 2026-05-20
 
 ### Added

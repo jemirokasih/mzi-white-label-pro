@@ -30,7 +30,7 @@ MZI White Label Pro helps replace default WordPress branding, simplify the admin
 
 1. Download the plugin release ZIP from the GitHub Releases page.
 2. In WordPress admin, open **Plugins > Add New > Upload Plugin**.
-3. Upload `mzi-white-label-pro-v3.0.1.zip`.
+3. Upload `mzi-white-label-pro-v3.0.2.zip`.
 4. Activate **MZI White Label Pro**.
 5. Open **MZI White Label** in the admin menu and configure the settings.
 
@@ -59,7 +59,7 @@ When enabled, MZI White Label Pro avoids changing Wordfence admin pages, Wordfen
 Use the packaged plugin ZIP for WordPress installs:
 
 ```text
-mzi-white-label-pro-v3.0.1.zip
+mzi-white-label-pro-v3.0.2.zip
 ```
 
 Do not upload GitHub's generated source archive directly unless you repackage it so `mzi-white-label-pro.php` is inside the top-level plugin folder.
@@ -91,7 +91,7 @@ find mzi-white-label-pro -name '*.php' -print -exec php -l {} \;
 Build a WordPress-ready ZIP:
 
 ```bash
-zip -r mzi-white-label-pro-v3.0.1.zip mzi-white-label-pro -x '*.DS_Store' '*.git*'
+zip -r mzi-white-label-pro-v3.0.2.zip mzi-white-label-pro -x '*.DS_Store' '*.git*'
 ```
 
 ## License

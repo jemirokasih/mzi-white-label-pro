@@ -1,10 +1,10 @@
 === MZI White Label Pro ===
-Contributors: mzi
+Contributors: jemirokasih
 Tags: white label, branding, admin, login, dashboard
 Requires at least: 5.8
-Tested up to: 6.5
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,14 @@ The plugin includes a Compatibility tab with Wordfence protection enabled by def
 Yes. Enable Client Mode and then enable Hide Update Notices In Client Mode from the Security tab. Administrators still see update notices.
 
 == Changelog ==
+
+= 3.0.2 =
+
+* Fixed WordPress.org Plugin Check findings.
+* Removed duplicate Plugin URI from the plugin header.
+* Updated WordPress.org contributor username.
+* Updated Tested up to value for repository submission.
+* Improved escaping and request handling compliance.
 
 = 3.0.1 =
 
