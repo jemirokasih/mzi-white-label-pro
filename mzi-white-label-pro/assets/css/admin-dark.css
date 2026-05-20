@@ -1,0 +1,28 @@
+body.wp-admin {
+    background: #1e1e1e;
+}
+
+#wpcontent,
+#wpfooter {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+.wrap h1,
+.wrap h2,
+.wrap h3,
+.wrap label,
+.wrap th,
+.wrap td {
+    color: #fff;
+}
+
+.nav-tab {
+    background: #2b2b2b;
+    color: #fff;
+    border-color: #444;
+}
+
+.nav-tab-active {
+    background: #111;
+}

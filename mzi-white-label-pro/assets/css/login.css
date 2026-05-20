@@ -1,0 +1,17 @@
+body.login h1 a {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 100% !important;
+    height: 100px !important;
+}
+
+body.login {
+    background-size: cover;
+    background-position: center;
+}
+
+.login form {
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
