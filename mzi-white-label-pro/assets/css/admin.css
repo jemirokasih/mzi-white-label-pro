@@ -65,9 +65,20 @@
     background: #fff;
 }
 
-.mzi-wlp-changelog pre {
-    margin: 0;
-    white-space: pre-wrap;
-    font-size: 14px;
-    line-height: 1.7;
+.mzi-wlp-changelog h2 {
+    margin: 0 0 12px;
+}
+
+.mzi-wlp-changelog h3 {
+    margin: 16px 0 8px;
+}
+
+.mzi-wlp-changelog ul {
+    margin: 0 0 0 18px;
+    list-style: disc;
+}
+
+.mzi-wlp-changelog li {
+    margin-bottom: 6px;
+    line-height: 1.6;
 }

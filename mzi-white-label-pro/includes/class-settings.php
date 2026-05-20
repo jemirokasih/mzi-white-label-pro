@@ -60,6 +60,7 @@ class MZI_White_Label_Pro_Settings {
             'hide_login_back_to_site',
             'hide_login_language_switcher',
             'protect_wordfence',
+            'hide_update_notices',
         ];
 
         foreach ($url_fields as $field) {

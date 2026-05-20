@@ -22,6 +22,7 @@ class MZI_White_Label_Pro_Plugin {
     }
 
     private function load_dependencies() {
+        require_once MZI_WLP_PATH . 'includes/class-changelog.php';
         require_once MZI_WLP_PATH . 'includes/class-admin.php';
         require_once MZI_WLP_PATH . 'includes/modules/class-compatibility.php';
         require_once MZI_WLP_PATH . 'includes/modules/class-branding.php';

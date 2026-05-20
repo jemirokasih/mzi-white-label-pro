@@ -22,31 +22,32 @@ class MZI_White_Label_Pro_Admin {
 
     private $fields = [
         'branding' => [
-            'login_logo'       => ['label' => 'Login Logo', 'type' => 'image'],
-            'admin_logo'       => ['label' => 'Admin Logo', 'type' => 'image'],
-            'favicon'          => ['label' => 'Favicon', 'type' => 'image'],
-            'login_background' => ['label' => 'Login Background', 'type' => 'image'],
-            'cms_name'         => ['label' => 'CMS Name', 'type' => 'text'],
-            'footer_text'      => ['label' => 'Footer Text', 'type' => 'text'],
-            'login_title'      => ['label' => 'Login Title', 'type' => 'text'],
+            'login_logo'       => ['label' => 'Login Logo', 'type' => 'image', 'description' => 'Logo yang tampil di halaman login WordPress. Gunakan gambar PNG/SVG dengan background transparan untuk hasil rapi.'],
+            'admin_logo'       => ['label' => 'Admin Logo', 'type' => 'image', 'description' => 'Logo kecil yang menggantikan logo WordPress di admin bar.'],
+            'favicon'          => ['label' => 'Favicon', 'type' => 'image', 'description' => 'Icon browser untuk area admin dan login. Ukuran umum: 32x32 atau 512x512.'],
+            'login_background' => ['label' => 'Login Background', 'type' => 'image', 'description' => 'Gambar background halaman login. Akan ditampilkan cover memenuhi layar.'],
+            'cms_name'         => ['label' => 'CMS Name', 'type' => 'text', 'description' => 'Nama CMS/brand yang menggantikan teks WordPress di area yang aman untuk white label.'],
+            'footer_text'      => ['label' => 'Footer Text', 'type' => 'text', 'description' => 'Teks footer di dashboard admin. Bisa diisi nama agensi atau support brand.'],
+            'login_title'      => ['label' => 'Login Title', 'type' => 'text', 'description' => 'Teks tooltip/title pada logo login. Default mengikuti nama website.'],
         ],
         'login' => [
-            'login_logo_width'          => ['label' => 'Logo Width', 'type' => 'number', 'suffix' => 'px'],
-            'login_logo_height'         => ['label' => 'Logo Height', 'type' => 'number', 'suffix' => 'px'],
-            'login_background_color'    => ['label' => 'Background Color', 'type' => 'color'],
-            'login_button_color'        => ['label' => 'Button Color', 'type' => 'color'],
+            'login_logo_width'          => ['label' => 'Logo Width', 'type' => 'number', 'suffix' => 'px', 'description' => 'Lebar logo login dalam pixel. Kosongkan atau isi 0 untuk memakai ukuran default.'],
+            'login_logo_height'         => ['label' => 'Logo Height', 'type' => 'number', 'suffix' => 'px', 'description' => 'Tinggi area logo login dalam pixel. Berguna jika logo terlihat terlalu kecil atau terpotong.'],
+            'login_background_color'    => ['label' => 'Background Color', 'type' => 'color', 'description' => 'Warna background fallback jika tidak memakai gambar background. Format: #123456.'],
+            'login_button_color'        => ['label' => 'Button Color', 'type' => 'color', 'description' => 'Warna tombol utama di halaman login. Format: #123456.'],
             'login_form_position'       => [
                 'label'   => 'Form Position',
                 'type'    => 'select',
+                'description' => 'Posisi form login di layar. Pilih kiri/kanan jika background punya area visual khusus.',
                 'choices' => [
                     'center' => 'Center',
                     'left'   => 'Left',
                     'right'  => 'Right',
                 ],
             ],
-            'hide_login_back_to_site'   => ['label' => 'Hide Back To Site Link', 'type' => 'checkbox'],
-            'hide_login_language_switcher' => ['label' => 'Hide Language Switcher', 'type' => 'checkbox'],
-            'login_custom_css'          => ['label' => 'Custom Login CSS', 'type' => 'textarea'],
+            'hide_login_back_to_site'   => ['label' => 'Hide Back To Site Link', 'type' => 'checkbox', 'description' => 'Menyembunyikan link kembali ke website dari halaman login.'],
+            'hide_login_language_switcher' => ['label' => 'Hide Language Switcher', 'type' => 'checkbox', 'description' => 'Menyembunyikan dropdown bahasa WordPress di halaman login.'],
+            'login_custom_css'          => ['label' => 'Custom Login CSS', 'type' => 'textarea', 'description' => 'CSS tambahan khusus halaman login. Gunakan hanya untuk penyesuaian kecil.'],
         ],
         'menus' => [
             'hidden_menus' => [
@@ -64,58 +65,63 @@ class MZI_White_Label_Pro_Admin {
                     'tools.php'                => 'Tools',
                     'options-general.php'      => 'Settings',
                 ],
-                'description' => 'Only applies when Client Mode is enabled and the current user is not an administrator.',
+                'description' => 'Hanya berlaku saat Client Mode aktif dan user bukan administrator. Menu Wordfence tetap dilindungi jika Compatibility Guard aktif.',
             ],
             'custom_hidden_menus' => [
                 'label'       => 'Custom Menu Slugs',
                 'type'        => 'textarea',
-                'description' => 'One menu slug per line, for example: edit.php?post_type=product',
+                'description' => 'Satu slug menu per baris. Contoh: edit.php?post_type=product',
             ],
             'menu_renames' => [
                 'label'       => 'Rename Menus',
                 'type'        => 'textarea',
-                'description' => 'One rule per line using slug|New Label, for example: edit.php|Articles',
+                'description' => 'Satu aturan per baris dengan format slug|Label Baru. Contoh: edit.php|Articles',
             ],
         ],
         'dashboard' => [
-            'dashboard_widget_enabled' => ['label' => 'Show Custom Welcome Widget', 'type' => 'checkbox'],
-            'dashboard_widget_title'   => ['label' => 'Widget Title', 'type' => 'text'],
-            'dashboard_widget_content' => ['label' => 'Widget Content', 'type' => 'textarea'],
-            'dashboard_hide_selected_widgets' => ['label' => 'Hide Selected Widgets', 'type' => 'checkbox'],
+            'dashboard_widget_enabled' => ['label' => 'Show Custom Welcome Widget', 'type' => 'checkbox', 'description' => 'Menampilkan widget welcome custom di halaman Dashboard WordPress.'],
+            'dashboard_widget_title'   => ['label' => 'Widget Title', 'type' => 'text', 'description' => 'Judul widget welcome custom. Jika kosong, default-nya Welcome.'],
+            'dashboard_widget_content' => ['label' => 'Widget Content', 'type' => 'textarea', 'description' => 'Isi widget welcome. Mendukung teks sederhana dan HTML aman WordPress.'],
+            'dashboard_hide_selected_widgets' => ['label' => 'Hide Selected Widgets', 'type' => 'checkbox', 'description' => 'Aktifkan untuk menyembunyikan widget dashboard yang dipilih di bawah.'],
             'dashboard_hidden_widgets' => [
                 'label'   => 'Dashboard Widgets',
                 'type'    => 'checkbox_group',
+                'description' => 'Pilih widget dashboard bawaan/plugin yang ingin disembunyikan dari tampilan dashboard.',
                 'choices' => [
                     'dashboard_primary'      => 'WordPress Events and News',
                     'dashboard_quick_press'  => 'Quick Draft',
                     'dashboard_activity'     => 'Activity',
                     'dashboard_right_now'    => 'At a Glance',
                     'dashboard_site_health'  => 'Site Health Status',
+                    'wpseo-dashboard-overview' => 'Yoast SEO Posts Overview',
+                    'e-dashboard-overview'      => 'Elementor Overview',
+                    'wpseo-wincher-dashboard-overview' => 'Yoast SEO / Wincher: Top Keyphrases',
                 ],
             ],
         ],
         'security' => [
-            'client_mode' => ['label' => 'Enable Client Mode', 'type' => 'checkbox'],
+            'client_mode' => ['label' => 'Enable Client Mode', 'type' => 'checkbox', 'description' => 'Mode aman untuk client: menyembunyikan menu sensitif dari user non-administrator.'],
+            'hide_update_notices' => ['label' => 'Hide Update Notices In Client Mode', 'type' => 'checkbox', 'description' => 'Menyembunyikan notifikasi update agar user client tidak panik. Administrator tetap bisa melihat update.'],
         ],
         'email' => [
-            'mail_name'  => ['label' => 'Sender Name', 'type' => 'text'],
-            'mail_email' => ['label' => 'Sender Email', 'type' => 'email'],
+            'mail_name'  => ['label' => 'Sender Name', 'type' => 'text', 'description' => 'Nama pengirim default untuk email WordPress.'],
+            'mail_email' => ['label' => 'Sender Email', 'type' => 'email', 'description' => 'Alamat email pengirim default. Pastikan domain email sesuai agar deliverability tetap baik.'],
         ],
         'theme' => [
-            'dark_admin' => ['label' => 'Enable Dark Admin', 'type' => 'checkbox'],
+            'dark_admin' => ['label' => 'Enable Dark Admin', 'type' => 'checkbox', 'description' => 'Mengaktifkan tampilan gelap sederhana untuk area admin WordPress.'],
         ],
         'advanced' => [
-            'disable_gutenberg' => ['label' => 'Disable Gutenberg', 'type' => 'checkbox'],
-            'disable_comments'  => ['label' => 'Disable Comments', 'type' => 'checkbox'],
-            'disable_heartbeat' => ['label' => 'Disable Heartbeat', 'type' => 'checkbox'],
-            'disable_xmlrpc'    => ['label' => 'Disable XMLRPC', 'type' => 'checkbox'],
+            'disable_gutenberg' => ['label' => 'Disable Gutenberg', 'type' => 'checkbox', 'description' => 'Mematikan block editor untuk post agar editor klasik bisa digunakan oleh tema/plugin yang membutuhkannya.'],
+            'disable_comments'  => ['label' => 'Disable Comments', 'type' => 'checkbox', 'description' => 'Menutup komentar dan ping baru di frontend. Tidak menghapus komentar lama.'],
+            'disable_heartbeat' => ['label' => 'Disable Heartbeat', 'type' => 'checkbox', 'description' => 'Mematikan WordPress Heartbeat untuk mengurangi request admin. Halaman Wordfence tetap dilindungi.'],
+            'disable_xmlrpc'    => ['label' => 'Disable XMLRPC', 'type' => 'checkbox', 'description' => 'Mematikan XML-RPC jika website tidak memakai aplikasi/layanan yang membutuhkannya.'],
         ],
         'compat' => [
             'protect_wordfence' => [
                 'label'       => 'Protect Wordfence Areas',
                 'type'        => 'checkbox',
                 'default'     => '1',
-                'description' => 'Recommended. Keeps Wordfence pages, text, and heartbeat behavior outside white-label overrides.',
+                'description' => 'Direkomendasikan. Menjaga halaman, teks, menu, dan heartbeat Wordfence agar tidak terkena white-label override.',
             ],
         ],
     ];
@@ -294,28 +300,22 @@ class MZI_White_Label_Pro_Admin {
     }
 
     private function render_changelog_tab() {
-        ?>
-        <div class="mzi-wlp-changelog">
-<pre>
-MZI White Label Pro v3.0.0
+        foreach (MZI_White_Label_Pro_Changelog::entries() as $version => $groups) :
+            ?>
+            <div class="mzi-wlp-changelog">
+                <h2><?php echo esc_html('MZI White Label Pro v' . $version); ?></h2>
 
-[Changed]
-- Modular plugin architecture
-- Lightweight bootstrap file
-- Shared settings manager
-- Field registry for admin settings
-- Admin menu manager for client mode
-- Dashboard widget manager
-- Login page customizer
-- Separate assets for admin JavaScript, login branding, and admin theme CSS
-- Separate modules for branding, dashboard, security, email, advanced controls, and admin theme
-
-[Compatibility]
-- Existing mzi_white_label_settings option is preserved
-- Wordfence admin pages, text, and heartbeat behavior are protected by default
-</pre>
-        </div>
-        <?php
+                <?php foreach ($groups as $group => $items) : ?>
+                    <h3><?php echo esc_html($group); ?></h3>
+                    <ul>
+                        <?php foreach ($items as $item) : ?>
+                            <li><?php echo esc_html($item); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endforeach; ?>
+            </div>
+            <?php
+        endforeach;
     }
 
     private function open_form($fields) {
